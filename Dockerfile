@@ -83,7 +83,7 @@ RUN make
 RUN make install
 
 # Set LD_LIBRARY
-ENV LD_LIBRARY_PATH /usr/local/lib:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH /usr/local/lib:/usr/local/include/:/usr/local/include/libbson-1.0:$LD_LIBRARY_PATH
 
 # Add mount volume
 VOLUME /data/swift

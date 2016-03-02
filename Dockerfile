@@ -22,7 +22,7 @@ MAINTAINER boostcode
 LABEL Description="Image to create a Linux environment with the latest Swift binaries for Kitura based projects."
 
 # Variables
-ENV SWIFT_SNAPSHOT swift-DEVELOPMENT-SNAPSHOT-2016-02-08-a
+ENV SWIFT_SNAPSHOT swift-DEVELOPMENT-SNAPSHOT-2016-03-01-a
 ENV UBUNTU_VERSION ubuntu15.10
 ENV UBUNTU_VERSION_NO_DOTS ubuntu1510
 ENV PCRE2_VERSION pcre2-10.20

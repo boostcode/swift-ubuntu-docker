@@ -76,11 +76,11 @@ RUN tar xzvf $PCRE2_VERSION.tar.gz
 RUN cd $PCRE2_VERSION && ./configure && make && make install
 
 # Install MongoDb
-RUN curl -L https://github.com/mongodb/mongo-c-driver/releases/download/1.3.3/mongo-c-driver-1.3.3.tar.gz | tar xz
-RUN cd mongo-c-driver-1.3.3/
-RUN ./configure --enable-static --disable-shared
-RUN make
-RUN make install
+#RUN curl -L https://github.com/mongodb/mongo-c-driver/releases/download/1.3.3/mongo-c-driver-1.3.3.tar.gz | tar xz
+#RUN cd mongo-c-driver-1.3.3/
+#RUN ./configure --enable-static --disable-shared
+#RUN make
+#RUN make install
 
 # Install SQLite
 RUN apt-get install sqlite3 libsqlite3-dev -y

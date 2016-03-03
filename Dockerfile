@@ -82,6 +82,9 @@ RUN ./configure --enable-static --disable-shared
 RUN make
 RUN make install
 
+# Install SQLite
+RUN apt-get install sqlite3 libsqlite3-dev -y
+
 # Set LD_LIBRARY
 ENV LD_LIBRARY_PATH /usr/local/lib:/usr/local/include/:/usr/local/include/libbson-1.0:$LD_LIBRARY_PATH
 

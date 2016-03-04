@@ -77,7 +77,7 @@ RUN tar xzvf $PCRE2_VERSION.tar.gz
 RUN cd $PCRE2_VERSION && ./configure && make && make install
 
 # Install MongoDb
-RUN wget thttps://github.com/mongodb/mongo-c-driver/releases/download/$MONGODB_VER/mongo-c-driver-$MONGODB_VER.tar.gz
+RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/$MONGODB_VER/mongo-c-driver-$MONGODB_VER.tar.gz
 RUN tar xzf mongo-c-driver-$MONGODB_VER.tar.gz && cd mongo-c-driver-$MONGODB_VER && ./configure && make && make install
 
 # Set LD_LIBRARY

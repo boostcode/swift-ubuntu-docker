@@ -28,6 +28,7 @@ ENV UBUNTU_VERSION_NO_DOTS ubuntu1510
 ENV PCRE2_VERSION pcre2-10.20
 ENV HOME /root
 ENV WORK_DIR /root
+ENV MONGODB_VER 1.3.3
 
 # Set WORKDIR
 WORKDIR ${WORK_DIR}
@@ -76,14 +77,8 @@ RUN tar xzvf $PCRE2_VERSION.tar.gz
 RUN cd $PCRE2_VERSION && ./configure && make && make install
 
 # Install MongoDb
-#RUN curl -L https://github.com/mongodb/mongo-c-driver/releases/download/1.3.3/mongo-c-driver-1.3.3.tar.gz | tar xz
-#RUN cd mongo-c-driver-1.3.3/
-#RUN ./configure --enable-static --disable-shared
-#RUN make
-#RUN make install
-
-# Install SQLite
-RUN apt-get install sqlite3 libsqlite3-dev -y
+RUN wget thttps://github.com/mongodb/mongo-c-driver/releases/download/$MONGODB_VER/mongo-c-driver-$MONGODB_VER.tar.gz
+RUN tar xzf mongo-c-driver-$MONGODB_VER.tar.gz && cd mongo-c-driver-$MONGODB_VER && ./configure && make && make install
 
 # Set LD_LIBRARY
 ENV LD_LIBRARY_PATH /usr/local/lib:/usr/local/include/:/usr/local/include/libbson-1.0:$LD_LIBRARY_PATH

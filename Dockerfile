@@ -69,6 +69,9 @@ RUN swiftc -h
 
 # Clone and install swift-corelibs-libdispatch
 RUN git clone https://github.com/apple/swift-corelibs-libdispatch.git
+# Interim solution to address defects in libdispatch
+ADD dispatch.h $WORK_DIR/swift-corelibs-libdispatch/dispatch
+ADD configure.ac $WORK_DIR/swift-corelibs-libdispatch/
 RUN cd swift-corelibs-libdispatch && git submodule init && git submodule update && sh ./autogen.sh && ./configure --with-swift-toolchain=$WORK_DIR/$SWIFT_SNAPSHOT-$UBUNTU_VERSION/usr --prefix=$WORK_DIR/$SWIFT_SNAPSHOT-$UBUNTU_VERSION/usr && make && make install
 
 # Install PCRE2
